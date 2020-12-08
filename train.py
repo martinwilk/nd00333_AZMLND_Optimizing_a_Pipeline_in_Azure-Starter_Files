@@ -64,7 +64,7 @@ if __name__ == '__main__':
     url = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
     ds = TabularDatasetFactory.from_delimited_files(url)
     x, y = clean_data(ds)
-    x_train, y_train, x_test, y_test = train_test_split(x, y, train_size=0.7, random_state=42, stratify=y) 
+    x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.7, random_state=42, stratify=y) 
     main()
 
 
