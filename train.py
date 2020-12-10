@@ -58,15 +58,17 @@ def main():
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
     os.makedirs("outputs", exist_ok=True)
     joblib.dump(model, filename="outputs/bankmarketing_hyperdrive.joblib")
+    run.log("Accuracy", np.float(accuracy))  
 
 if __name__ == '__main__':
     url = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-    ds = TabularDatasetFactory.from_delimited_files(url)
-    x, y = clean_data(ds)
-    x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.7, random_state=42, stratify=y) 
+    bankmarketing_data = TabularDatasetFactory.from_delimited_files(url)
+    x_bank, y_bank = clean_data(bankmarketing_data)
+    x_train, x_test, y_train, y_test = train_test_split(x_bank, y_bank, random_state=0) 
     main()
+
+
 
 
