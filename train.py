@@ -53,8 +53,8 @@ def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
-    parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
+    parser.add_argument("--C", type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
+    parser.add_argument("--max_iter", type=int, default=100, help="Maximum number of iterations to converge")
 
     args = parser.parse_args()
 
@@ -70,7 +70,3 @@ def main():
 
 if __name__ == '__main__':    
     main()
-
-
-
-
