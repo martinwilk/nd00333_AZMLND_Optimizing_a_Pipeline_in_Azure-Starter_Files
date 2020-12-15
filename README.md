@@ -6,9 +6,9 @@ In this project, we build and optimize an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.
 
 ## Summary
-This dataset is related with a direct marketing campaigns of a Portuguese bank. We seek to predict if a customer will subscribe 
+This dataset is related with a direct marketing campaigns of a Portuguese bank (1). We seek to predict if a customer will subscribe 
 a term deposit. Knowing this information saves the banking company a lot of time and money because only customers with a high likelihood
-of subscribing to the bank product are contacted via phone and informed about the term deposit. 
+of subscribing to the bank product are contacted via phone and informed about the term deposit. (1) 
 We will compare a hyperparameter-tuned scikit-learn logistic regression model to a classification model created by Azure AutoML in this project.
 
 The best performing model was a hyperparameter-tuned logistic regression with a inverse regularization strength (C) of 0.73 and maximal 300 iterations (max_iter).
@@ -67,3 +67,5 @@ The last point I want to elaborate on is the high correlation between the featur
 The high correlation could lead to a overestimation of model performance. In addition the duration of the contact is not known before the call, so that variable is not helpful when predicting the output 
 on customers. Because of these reasons I would exclude this variable in further experiments.
 
+## Resources
+(1) Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.  (https://archive.ics.uci.edu/ml/datasets/Bank+Marketing)
