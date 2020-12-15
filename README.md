@@ -16,7 +16,7 @@ The best performing model is a hyperparameter-tuned logistic regression with a i
 ## Scikit-learn Pipeline
 
 In this section I describe the pipeline architecture using the scikit-learn logistic regression classifier, which is displayed in the following flowchart.
-![scikit-learn pipeline](./figures/Pipeline_MLProject1.png).
+![scikit-learn pipeline](Pipeline_MLProject1.png).
 First the data is loaded from a csv file located in the Internet into TabularDataset. We use TabularDatasetFactory's from_delimited_files method for this task by specifying 
 a URL of the csv file as a parameter of the function. After that the data set is cleaned using the clean_data function supplied by Udacity. Now the dataset is divided into a 
 training set and a test set using the train_test_split function by scikit-learn. 
@@ -44,7 +44,7 @@ AutoML allows us to automatically train multiple models and their hyperparameter
 SVMs should be blocked because it takes too much time to train them. 
 The best model returned by AutoML is a Voting Ensemble method which means that multiple models are used to determine the class of each instance. This practice is called ensemble methods.
 The TOP3 important features are the duration (duration of last call in seconds), the number of employees and the employment variation rate as you could see in the following plot.
-![feature importance](./figures/feature_importance.png)
+![feature importance](feature_importance.png)
 
 ## Pipeline comparison
 The difference in accuracy between the best hyperparameter-tuned scikit-learn logistic regression model and the Voting Ensemble model from AutoML is very small (0.9163 vs. 0.9161). In my opinion this difference is neglectable and occurs due to randomness.
