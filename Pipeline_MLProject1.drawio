@@ -1,1 +1,43 @@
-<mxfile host="app.diagrams.net" modified="2020-12-15T08:27:52.729Z" agent="5.0 (Windows)" version="14.0.1" etag="xuMaLdMYTzgSbg2nuHmT" type="github"><diagram id="VBtnmqoWKUZgKZmdeOyo">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-15T08:31:58.888Z" agent="5.0 (Windows)" etag="eQpqtzloJ3kdbp8kSS49" version="14.0.1" type="github">
+  <diagram id="VBtnmqoWKUZgKZmdeOyo" name="Page-1">
+    <mxGraphModel dx="2942" dy="1123" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="r1xZyWP3JjQXsNyQGXBp-1" target="r1xZyWP3JjQXsNyQGXBp-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-1" value="&lt;div&gt;TabularDataset&lt;/div&gt;&lt;div&gt;Import&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="r1xZyWP3JjQXsNyQGXBp-2" target="r1xZyWP3JjQXsNyQGXBp-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-2" value="Data Cleansing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="r1xZyWP3JjQXsNyQGXBp-3" target="r1xZyWP3JjQXsNyQGXBp-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-3" value="&lt;div&gt;Hyperparameter&lt;/div&gt;&lt;div&gt;Tuning&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="r1xZyWP3JjQXsNyQGXBp-4" target="r1xZyWP3JjQXsNyQGXBp-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-4" value="Logistic Regression" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-5" value="Evaluation on test set" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="r1xZyWP3JjQXsNyQGXBp-6" target="r1xZyWP3JjQXsNyQGXBp-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1xZyWP3JjQXsNyQGXBp-6" value="Data Partitioning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
