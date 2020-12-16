@@ -49,7 +49,6 @@ SVMs should be blocked because it takes too much time to train them.
 The best model returned by AutoML is a Voting Ensemble method which means that multiple models are used to determine the class prediction for each instance. This practice is called ensemble method.
 The TOP3 important features used by the VotingEnsemble model are the duration (duration of last call in seconds), the number of employees and the employment variation rate as you could see in the following plot.
 ![feature importance](./figures/feature_importance.png).
-The classification algorithms and parameters used for the VotingEnsemble could be found in the html file in the repo ![Voting Ensemble](./udacity-project-2020-12-16.html).
 
 ## Pipeline comparison
 The difference in accuracy between the best hyperparameter-tuned scikit-learn logistic regression model and the Voting Ensemble model from AutoML is very small (0.9163 vs. 0.9167). In my opinion this difference is neglectable and occurs due to randomness.
