@@ -11,7 +11,7 @@ a term deposit. Knowing this information saves the banking company a lot of time
 of subscribing to the bank product are contacted via phone and informed about the term deposit. (1) 
 We will compare a hyperparameter-tuned scikit-learn logistic regression model to a classification model created by Azure AutoML in this project.
 
-The best performing model was a hyperparameter-tuned logistic regression with a inverse regularization strength (C) of 0.73 and maximal 300 iterations (max_iter).
+The best performing model was a VotingEnsemble created by Azure AutoML which uses SparseNormalizer, MaxAbsScaler, StandardScaler as scalers and the classification algorithms XGBoost, LightGBM and logistic regression.
 
 ## Scikit-learn Pipeline
 
@@ -40,7 +40,7 @@ The next important parameter of the Hyperdrive configuration is the early stoppi
 The Bandit Policy cancels a run if the difference of the specified metric of this run to the best run is higher than 1%. This leads to quicker computation times and lower expenses because runs with a smaller performance are stopped.
 
 The last step is the submission  of the experiment by passing the hyperdrive config as an argument to the submit method of the experiment object. We could see the results using the 
-RunDetails class. As you can see in the model output in the jupyter notebook the best hyperdrive run has an accuracy of 0.9163 and uses 0.73 as inverse regularization parameter C and sets the number of maximum iterations to 300.
+RunDetails class. As you can see in the model output in the jupyter notebook the best hyperdrive run has an accuracy of 0.9163 and uses 0.85 as inverse regularization parameter C and sets the number of maximum iterations to 200.
 The best model is saved using joblib and registered in Azure.
 
 ## AutoML
@@ -48,10 +48,11 @@ AutoML allows us to automatically train multiple models and their hyperparameter
 SVMs should be blocked because it takes too much time to train them. 
 The best model returned by AutoML is a Voting Ensemble method which means that multiple models are used to determine the class prediction for each instance. This practice is called ensemble method.
 The TOP3 important features used by the VotingEnsemble model are the duration (duration of last call in seconds), the number of employees and the employment variation rate as you could see in the following plot.
-![feature importance](./figures/feature_importance.png)
+![feature importance](./figures/feature_importance.png).
+The classification algorithms and parameters used for the VotingEnsemble could be found in the html file in the repo ![Voting Ensemble](./udacity-project-2020-12-16.html).
 
 ## Pipeline comparison
-The difference in accuracy between the best hyperparameter-tuned scikit-learn logistic regression model and the Voting Ensemble model from AutoML is very small (0.9163 vs. 0.9161). In my opinion this difference is neglectable and occurs due to randomness.
+The difference in accuracy between the best hyperparameter-tuned scikit-learn logistic regression model and the Voting Ensemble model from AutoML is very small (0.9163 vs. 0.9167). In my opinion this difference is neglectable and occurs due to randomness.
 The major difference in architecture of the two models is that the logistic regression uses only one model to decide if a person will subscribe to the term deposit and the AutoML model uses multiple models for this purpose. Their predictions are aggregated using a majority vote principle.
  
 
