@@ -90,7 +90,7 @@ To obtain better efficiency, the algorithm uses histogram based algorithms to pe
 |parameter | value | description|
 | ---------|-------|------------|
 boosting_type | gbdt | type of boosting, gbdt = Gradient Boosted Decision Trees |
-class_weight None | weight for each class, not used here |
+class_weight | None | weight for each class, not used here |
 colsample_bytree | 1.0 | ratio of subsampled columns in the tree |
 importance_type | split | measure of importance of features |
 learning_rate 0.1 | learning rate for boosting | 
