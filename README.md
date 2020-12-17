@@ -53,42 +53,42 @@ The models involved in the VotingEnsemble are XGBoost, LightGBM and logistic reg
 XGBoost uses gradient boosting to optimize decision trees. By training new models based on the errors of prior trained models, they obtain a great performance.
 The XGBoost classifier trained by AutoML uses this set of parameters (2):
 
-| parameter | value | description |
-|-----------|-------|-------------|
-base_score  | 0.5   | initial prediction score, default 0.5 |
+| parameter | default value | description |
+|-----------|---------------|-------------|
+base_score  | 0.5   | initial prediction score |
 booster     | gbtree | type of models used for boosting. gbtree = Decision trees |
 colsample_bylevel | 1 | ratio of sampled columns per level |
 colsample_bynode| 1 | ratio of sampled columns for each node of the tree |
 colsample_bytree| 1 | ratio of sampled columns in the tree |
 eta| 0.3 | step size shrinkage, used to prevent overfitting |
-gamma| 5 | minimum loss reduction, larger values make the algorithm more conservative |
-grow_policy| lossguide | specifies how the tree is built, lossguide: split tree at nodes with highest difference in loss |
+gamma| 0 | minimum loss reduction, larger values make the algorithm more conservative |
+grow_policy| depthwise | specifies how the tree is built, lossguide: split tree at nodes with highest difference in loss |
 learning_rate| 0.1 | step size shrinkage, used to prevent overfitting |
-max_bin | 63 | used when tree_method is hist, maximum amount of bins in histogram |
+max_bin | 256 | used when tree_method is hist, maximum amount of bins in histogram |
 max_delta_step| 0 | maximum change for leaf output, 0 = no constraints |
-max_depth| 10 | max depth of decision tree |
+max_depth| 6 | max depth of decision tree |
 max_leaves| 0 | maximum number of leaves, 0 = no limit |
 min_child_weight| 1 | minimum weight of a child node |
 missing| nan | how to impute missing values in the dataset |
-n_estimators| 25 | number of trees |
+n_estimators| 100 | number of trees |
 n_jobs| 1 | number of parallel threads|
 nthread| None | number of threads |
-objective| reg:logistic | learning task (i.e. classification, regression  including error| 
+objective| reg:squarederror | learning task (i.e. classification, regression  including error| 
 random_state| 0 | random seed | 
-reg_alpha| 1.5625 | L1 regularization on weights |
-reg_lambda| 0.10416666666666667 | L2 regularization on weights |
+reg_alpha| 0 | L1 regularization on weights |
+reg_lambda| 0 | L2 regularization on weights |
 scale_pos_weight| 1 | controls balance of positive and negative weights (useful for imbalanced datasets) |
 seed| None | random seed |
-subsample| 0.7 | ratio of training instances used in training process |
-tree_method| hist | method to construct the decision tree, hist means construction of trees using efficient algorithm based on histograms|
+subsample| 1 | ratio of training instances used in training process |
+tree_method| auto | method to construct the decision tree, hist means construction of trees using efficient algorithm based on histograms|
 
-An interesting observation is that the parameter set of the XGBoostClassifier includes the parameter eta and learning_rate. As stated in the documentation (2), learning rate is an alias for eta. 
+An interesting observation is that the parameter set of the XGBoostClassifier includes the parameter eta and learning_rate. As stated in the documentation for XGBoost (2), learning rate is an alias for the parameter eta. 
 
 Another model involved in the VotingEnsemble classifier created by AutoML is a LightGBM with the parameter set outlined in the table below. This classification algorithm is also a gradient boosting algorithm. The difference to XGBoost is a higher speed of computation.
 To obtain better efficiency, the algorithm uses histogram based algorithms to perform a binning of continuous features (3).
 
-|parameter | value | description|
-| ---------|-------|------------|
+|parameter | default value | description|
+| ---------|---------------|------------|
 boosting_type | gbdt | type of boosting, gbdt = Gradient Boosted Decision Trees |
 class_weight | None | weight for each class, not used here |
 colsample_bytree | 1.0 | ratio of subsampled columns in the tree |
@@ -99,7 +99,7 @@ min_child_samples | 20 | minimal number of instances in child node |
 min_child_weight | 0.001 | minimal weight needed in child node |
 min_split_gain | 0.0 | minimal loss reduction required for a new split |
 n_estimators | 100 | number of trees |
-n_jobs | 1 | number of parallel threads | 
+n_jobs | -1 | number of parallel threads | 
 num_leaves | 31 | maximum number of leaves for each tree |
 objective |  None | task to learn | 
 random_state | None | random seed |
@@ -109,6 +109,8 @@ silent | True | prints messages while running boosting process |
 subsample | 1.0 | ratio of training instances used in training process | 
 subsample_for_bin |  200000 | number of samples for constructing bins for histogram, default 200000 |
 subsample_freq | 0 | how often the dataset is subsampled, 0 means no subsampling |
+
+The values of the parameters for the XGBoostClassifier and the LightGBMClassifier are optimized for each crossvalidation run. The tables above show the values of the parameters for the estimator 18 (XGBoost) and 0 (LightGBM). The values from the other estimators can be obtained from the html file included in the repository.
 
 
 ## Pipeline comparison
