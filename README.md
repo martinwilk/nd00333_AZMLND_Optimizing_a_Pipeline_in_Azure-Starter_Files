@@ -86,6 +86,7 @@ An interesting observation is that the parameter set of the XGBoostClassifier in
 
 Another model involved in the VotingEnsemble classifier created by AutoML is a LightGBM with the parameter set outlined in the table below. This classification algorithm is also a gradient boosting algorithm. The difference to XGBoost is a higher speed of computation.
 To obtain better efficiency, the algorithm uses histogram based algorithms to perform a binning of continuous features (3).
+
 |parameter | value | description|
 | ---------|-------|------------|
 boosting_type | gbdt | type of boosting, gbdt = Gradient Boosted Decision Trees |
